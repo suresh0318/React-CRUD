@@ -8,6 +8,7 @@ const Create = () => {
   const [number, setNumber] = useState("");
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [show,setShow]=useState(true)
 
   useEffect(() => {
     getData();
@@ -20,6 +21,7 @@ const Create = () => {
         .then((res) => {
           setData(res.data);
           setLoading(false);
+          
         });
     } catch (error) {
       console.error(error);
@@ -29,33 +31,28 @@ const Create = () => {
   const submitData = (e) => {
     setLoading(true);
     e.preventDefault();
-
-if(name.length<3){
-  window.alert("minimum 3 characters")
-  setLoading(false)
-}
-else if(isNaN(number)){
-  window.alert("enter numberic only")
-  setLoading(false)
-}
-else if (number.length!==10) {
-  window.alert("enter 10 digit number")
-  setLoading(false)
-} 
-else{
-  axios
-  .post(`https://620139a8fdf5090017249902.mockapi.io/data`, {
-    name,
-    number,
-  })
-  .then(() => {
-    getData();
-    setLoading(false);
-  });
-}
-
-
-    
+setShow(false)
+    if (name.length < 3) {
+      window.alert("minimum 3 characters");
+      setLoading(false);
+    } else if (isNaN(number)) {
+      window.alert("enter numberic only");
+      setLoading(false);
+    } else if (number.length !== 10) {
+      window.alert("enter 10 digit number");
+      setLoading(false);
+    } else {
+      axios
+        .post(`https://620139a8fdf5090017249902.mockapi.io/data`, {
+          name,
+          number,
+        })
+        .then(() => {
+          getData();
+          setLoading(false);
+          setShow(true)
+        });
+    }
   };
   return (
     <div className="container">
@@ -87,10 +84,10 @@ else{
               }}
             ></input>
           </div>
-
-          <button type="submit" className="btn btn-dark" onClick={submitData}>
+{show && <button type="submit" className="btn btn-dark" onClick={submitData}>
             Submit
-          </button>
+          </button>}
+          
         </form>
       </div>
 
