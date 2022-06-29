@@ -3,7 +3,7 @@
   align-items: flex-start;
   align-content: flex-start;
   justify-content: space-around;
-  background-color: #C4C9D6;
+  background-color: #c4c9d6;
   padding: 1rem;
   margin: 1rem;
 }
@@ -13,13 +13,13 @@
 .form-style {
   align-self: center;
   width: 30vw;
-  color: #FEFEFE;
-  background-color: #828DA9;
+  color: #fefefe;
+  background-color: #828da9;
   border-radius: 10px;
   padding: 4rem;
   margin: 1rem 5rem 1rem;
 }
-.form-control{
+.form-control {
   width: 85%;
 }
 h2 {
@@ -29,34 +29,38 @@ h2 {
 .list-group-item:last-child {
   border-radius: 10px;
 }
-.container{
+.container {
   display: flex;
   flex-direction: column;
- align-items: center;
-  
+  align-items: center;
 }
-.list-group-item{
+.list-group-item {
   width: 80vw;
   display: flex;
 }
 @media only screen and (max-width: 768px) {
-  .list-items{
-display: flex;
-/* align-items: center;
-justify-content: center; */
+  .list-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     padding: 0.2rem;
     margin: 0.2rem;
   }
-  .btns{
+  .btns {
     padding: 0.2rem;
     font-size: 0.6rem;
-    
   }
-  h3{
-    font-size: 1rem;
+  h3 {
+    font-size: 0.8rem;
     text-align: center;
   }
   .form-style {
     width: 80vw;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .form-style{
+    margin-left: 2rem;
   }
 }
