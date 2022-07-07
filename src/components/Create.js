@@ -29,7 +29,7 @@ const Create = () => {
   const submitData = (e) => {
     setLoading(true);
     e.preventDefault();
-    // setShow(false);
+   
     if (name.length < 3) {
       window.alert("minimum 3 characters");
       setLoading(false);
