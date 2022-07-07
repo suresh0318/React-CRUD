@@ -1,15 +1,4 @@
-.list-items {
-  display: flex;
-  align-items: flex-start;
-  align-content: flex-start;
-  justify-content: space-around;
-  background-color: #c4c9d6;
-  padding: 1rem;
-  margin: 1rem;
-}
-.list-items h3 {
-  width: 20%;
-}
+
 .form-style {
   align-self: center;
   width: 30vw;
@@ -17,7 +6,8 @@
   background-color: #828da9;
   border-radius: 10px;
   padding: 4rem;
-  margin: 1rem 5rem 1rem;
+  margin: auto;
+  margin-bottom: 1rem;
 }
 .form-control {
   width: 85%;
@@ -26,30 +16,21 @@ h2 {
   color: #303646;
   padding-bottom: 0.5rem;
 }
-.list-group-item:last-child {
-  border-radius: 10px;
-}
+
+
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 60%;
+  padding: 2rem 0rem;
 }
-.list-group-item {
-  width: 80vw;
-  display: flex;
+
+h4 {
+  margin: 2rem 0rem 1rem;
 }
+
+
+
 @media only screen and (max-width: 768px) {
-  .list-items {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0.2rem;
-    margin: 0.2rem;
-  }
-  .btns {
-    padding: 0.2rem;
-    font-size: 0.6rem;
-  }
+  
   h3 {
     font-size: 0.8rem;
     text-align: center;

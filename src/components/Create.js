@@ -8,7 +8,6 @@ const Create = () => {
   const [number, setNumber] = useState("");
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [show,setShow]=useState(true)
 
   useEffect(() => {
     getData();
@@ -21,7 +20,6 @@ const Create = () => {
         .then((res) => {
           setData(res.data);
           setLoading(false);
-          
         });
     } catch (error) {
       console.error(error);
@@ -31,7 +29,7 @@ const Create = () => {
   const submitData = (e) => {
     setLoading(true);
     e.preventDefault();
-setShow(false)
+    // setShow(false);
     if (name.length < 3) {
       window.alert("minimum 3 characters");
       setLoading(false);
@@ -50,13 +48,13 @@ setShow(false)
         .then(() => {
           getData();
           setLoading(false);
-          setShow(true)
+          setName("")
+          setNumber("")
         });
     }
   };
   return (
     <div className="container">
-      <div>
         <form className="form-style">
           <div className="form-group">
             <label htmlFor="name">Name</label>
@@ -74,7 +72,7 @@ setShow(false)
           <div className="form-group">
             <label htmlFor="mobile">Mobile</label>
             <input
-              type="text"
+              type="number"
               className="form-control"
               id="mobile"
               placeholder="mobile"
@@ -84,12 +82,13 @@ setShow(false)
               }}
             ></input>
           </div>
-{show && <button type="submit" className="btn btn-dark" onClick={submitData}>
-            Submit
-          </button>}
-          
+          {!loading && (
+            <button type="submit" className="btn btn-dark" onClick={submitData}>
+              Submit
+            </button>
+          )}
         </form>
-      </div>
+      
 
       <Read data={data} loading={loading} getData={getData} />
     </div>

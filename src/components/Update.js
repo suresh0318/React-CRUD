@@ -26,11 +26,11 @@ const Update = () => {
       id,
       name,
       number,
-    });
+    })
   };
 
   return (
-    <div>
+    <div className="container">
       <form className="form-style">
         <h2>Update</h2>
         <div className="form-group">

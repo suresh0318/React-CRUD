@@ -16,29 +16,47 @@ const Read = ({ data, loading, getData }) => {
     return <Loader />;
   } else
     return (
-      <div>
-        {data.map((user) => {
-          return (
-            <ul
-              className="list-group list-group-flush list-style"
-              key={user.id}
-            >
-              <li className="list-group-item list-items">
-                <h3>{user.name}</h3>
-                <h3>{user.number}</h3>
-                <Link to={`/update/${user.id}`}>
-                  <button className="btn btn-success btns ml-2">update</button>
-                </Link>
-                <button
-                  className="btn btn-danger btns"
-                  onClick={() => onDelete(user.id)}
-                >
-                  delete
-                </button>
-              </li>
-            </ul>
-          );
-        })}
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <table className="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Mobile</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.map((user) => {
+                  return (
+                    <tr key={user.id}>
+                      <td>{user.name}</td>
+                      <td>{user.number}</td>
+                      <td className="btns">
+                        <Link to={`/update/${user.id}`}>
+                          <button
+                            type="button"
+                            className="btn btn-success mr-5"
+                          >
+                            Update
+                          </button>
+                        </Link>
+                        <button
+                          type="button"
+                          className="btn btn-danger"
+                          onClick={() => onDelete(user.id)}
+                        >
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     );
 };
