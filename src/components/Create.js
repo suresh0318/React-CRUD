@@ -11,7 +11,7 @@ const Create = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [data]);
 
   const getData = () => {
     try {
